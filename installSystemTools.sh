@@ -1,29 +1,24 @@
+installHomeBrew () {
+  echo "***installHomeBrew*** Installing HomeBrew" 1>&2
+  $(isRoot)
 
-#installing Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  #installing Homebrew
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-#installing Node + npm
-brew install node
+  echo "***installHomeBrew*** done" 1>&2
+}
 
-brew install typesafe-activator
+installOsxFuse () {
+  echo "***installOsxFuse*** Installing OSXFuse" 1>&2
+  $(isRoot)
+  brew cask install osxfuse
+  echo "***installOsxFuse*** done" 1>&2
+}
 
-#custominze NPM to never use sudo for 'npm install -g'
-mkdir "${HOME}/.npm-packages"
-echo NPM_PACKAGES="${HOME}/.npm-packages" >> ${HOME}/.bashrc
-echo prefix=${HOME}/.npm-packages >> ${HOME}/.npmrc
-curl -L https://www.npmjs.org/install.sh | sh
-echo NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\" >> ${HOME}/.bashrc
-echo PATH=\"\$NPM_PACKAGES/bin:\$PATH\" >> ${HOME}/.bashrc
-echo source "~/.bashrc" >> ${HOME}/.bash_profile
-source ~/.bashrc
-
-npm install -g bower
-npm install -g grunt-cli
-npm install -g gulp
-npm install -g nodemon
-npm install -g yo
-npm install -g generator-meanjs
-npm install -g generator-karma
-npm install -g generator-angular
-npm install -g mean-cli
-gem install sass
+installNodejs () {
+  echo "***installNodejs*** Installing Nodejs" 1>&2
+  $(isRoot)
+  #installing Node + npm
+  brew install node
+  echo "***installNodejs*** done" 1>&2
+}

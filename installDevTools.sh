@@ -1,5 +1,16 @@
 #!/bin/bash
 
+removeFromPath() {
+  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
+}
+
+removeJdkInPath() {
+  removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+  if [ -n "${JAVA_HOME+x}" ]; then
+    removeFromPath $JAVA_HOME
+  fi
+}
+
 isRoot() {
   if [ "$(id -u)" != "0" ]; then
    echo "***isRoot*** This script must be run as root" 1>&2
@@ -21,15 +32,15 @@ changeAppsRights () {
   echo "***changeAppsRights*** done" 1>&2
 }
 
-#installCassandra () {
-  #echo "***installCassandra*** Installing Cassandra" 1>&2
-  #cd /apps
-  #curl -O http://www.us.apache.org/dist/cassandra/2.2.3/apache-cassandra-2.2.3-bin.tar.gz
-  #tar -xvzf apache-cassandra-2.2.3-bin.tar.gz
-  #rm apache-cassandra-2.2.3-bin.tar.gz
-  #ln -s /apps/apache-cassandra-2.2.3 /apps/cassandra
-  #echo "***installCassandra*** done" 1>&2
-#}
+installCassandra () {
+  echo "***installCassandra*** Installing Cassandra" 1>&2
+  cd /apps
+  curl -O http://www.us.apache.org/dist/cassandra/2.2.3/apache-cassandra-2.2.3-bin.tar.gz
+  tar -xvzf apache-cassandra-2.2.3-bin.tar.gz
+  rm apache-cassandra-2.2.3-bin.tar.gz
+  ln -s /apps/apache-cassandra-2.2.3 /apps/cassandra
+  echo "***installCassandra*** done" 1>&2
+}
 
 installJdk8 () {
   echo "***installJdk*** Installing Oracle Jdk8" 1>&2
@@ -138,6 +149,35 @@ installSts () {
   echo "***installSts*** done" 1>&2
 }
 
+installScala () {
+
+}
+
+installSbt () {
+
+}
+
+installGradle () {
+
+}
+
+installPacker () {
+
+}
+
+installMongo () {
+
+}
+
+installGrails () {
+
+}
+
+installAnt () {
+
+}
+
+
 installPlay2 () {
   echo "***installPlay2*** Installing Play2" 1>&2
   cd /apps
@@ -148,17 +188,49 @@ installPlay2 () {
   echo "***installPlay2*** done" 1>&2
 }
 
+customizeNpm () {
+  echo "***customizeNpm*** customize npm to never require sudo for 'npm install -g'" 1>&2
+
+  #custominze NPM to never use sudo for 'npm install -g'
+  mkdir "${HOME}/.npm-packages"
+  echo NPM_PACKAGES="${HOME}/.npm-packages" >> ${HOME}/.bashrc
+  echo prefix=${HOME}/.npm-packages >> ${HOME}/.npmrc
+  curl -L https://www.npmjs.org/install.sh | sh
+  echo NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\" >> ${HOME}/.bashrc
+  echo PATH=\"\$NPM_PACKAGES/bin:\$PATH\" >> ${HOME}/.bashrc
+  echo source "~/.bashrc" >> ${HOME}/.bash_profile
+  source ~/.bashrc
+
+  npm install -g bower
+  npm install -g grunt-cli
+  npm install -g gulp
+  npm install -g nodemon
+  npm install -g yo
+  npm install -g generator-meanjs
+  npm install -g generator-karma
+  npm install -g generator-angular
+  npm install -g mean-cli
+  gem install sass
+
+  echo "***customizeNpm*** done" 1>&2
+}
+
 addToPath () {
   echo "***addToPath*** Adding apps to PATH" 1>&2
 
+  removeJdkInPath
+
   echo "export PATH=/apps/VSCode:$PATH" >> ~/.bashrc
   echo "export PATH=/apps/idea:$PATH" >> ~/.bashrc
-  echo "export PATH=/apps/sts:$PATH" >> ~/.bashrc
+  echo "export PATH=/apps/eclipse:$PATH" >> ~/.bashrc
   echo "export PATH=/apps/cassandra/bin:$PATH" >> ~/.bashrc
+  echo "export PATH=/apps/mongo/bin:$PATH" >> ~/.bashrc
   echo "export PATH=/apps/devcenter/bin:$PATH" >> ~/.bashrc
   echo "export PATH=/apps/tomcat/bin:$PATH" >> ~/.bashrc
   echo "export PATH=/apps/maven/bin:$PATH" >> ~/.bashrc
+  echo "export PATH=/apps/ant/bin:$PATH" >> ~/.bashrc
   echo "export PATH=/apps/activator:$PATH" >> ~/.bashrc
+  echo "export PATH=/apps/jdk8/bin:$PATH" >> ~/.bashrc
 
   echo "export NPM_PACKAGES=${HOME}/.npm-global-pkg" >> ~/.bashrc
   echo "export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH" >> ~/.bashrc
