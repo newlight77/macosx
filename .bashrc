@@ -1,11 +1,18 @@
 
-
-if [ -f ~/.bash_profile ]; then
-    source ~/.bash_profile
+if [ -f ~/.macosx/.bashrc_natenadau ]; then
+    source ~/.macosx/.bashrc_natenadau
 fi
 
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+if [ -f ~/.macosx/.bash_aliases ]; then
+    source ~/.macosx/.bashrc_aliases
+fi
+
+if [ -f ~/.macosx/.bash_pS12 ]; then
+    source ~/.macosx/.bashrc_ps12
+fi
+
+if [ -f ~/.macosx/.profile ]; then
+    source ~/.macosx/.profile
 fi
 
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
