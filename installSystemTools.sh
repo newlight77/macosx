@@ -18,7 +18,13 @@ installOsxFuse () {
 installNodejs () {
   echo "***installNodejs*** Installing Nodejs" 1>&2
   $(isRoot)
-  #installing Node + npm
   brew install node
   echo "***installNodejs*** done" 1>&2
+}
+
+installCocoaPods () {
+  echo "***installCocoaPods*** Installing Cocoa Pods" 1>&2
+  $(isRoot)
+  gem install cocoapods
+  echo "***installCocoaPods*** done" 1>&2
 }
