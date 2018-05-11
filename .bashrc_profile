@@ -1,4 +1,0 @@
-
-if [ -f ~/.macosx/.bashrc ]; then
-    source ~/.macosx/.bashrc
-fi
