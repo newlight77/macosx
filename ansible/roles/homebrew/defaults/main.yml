@@ -1,0 +1,56 @@
+---
+homebrew:
+  repo: https://github.com/Homebrew/brew
+
+  use_brewfile: true
+  brewfile_dir: '{{playbook_dir}}'
+
+  prefix: /usr/local
+  install_path: "{{homebrew.prefix}}/Homebrew"
+  brew_bin_path: /usr/local/bin
+
+  taps:
+    - homebrew/core
+    - caskroom/cask
+    - jcgay/jcgay
+
+  upgrade_all_packages: no
+
+  packages:
+    - ssh-copy-id
+    - pv
+    - brew-cask
+    - ant
+    - gradle
+    - maven-deluxe
+    - node
+    - tomcat
+    - eclipse-java
+    - openshift-cli
+    - bash-completion
+    - docker-completion
+    - docker-compose-completion
+    - docker-machine-completion
+
+  blacklists: []
+
+  casks:
+    packages:
+      - adobe-acrobat-reader
+      - firefox
+      - chromium
+      - minishift
+      - intellij-idea
+      - intellij-idea-ce
+      - atom
+      - sublime-text
+      - slack
+      - sqlectron
+      - vagrant
+      - virtualbox
+      - vagrant-manager
+      - docker
+
+    blacklists: []
+
+    appdir: /Applications

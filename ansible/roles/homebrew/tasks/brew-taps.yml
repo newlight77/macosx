@@ -1,0 +1,11 @@
+---
+
+# Tap.
+- name: Define brew_taps.
+  set_fact:
+    brew_taps: "{{ brew.taps | list }}"
+  when: brew_taps is undefined
+
+- name: Ensure configured taps are tapped.
+  homebrew_tap: "tap={{ item }} state=present"
+  with_items: "{{ brew_taps }}"
