@@ -313,6 +313,18 @@ brew cask install \
     ccleaner
 ```
 
+## Bash Customization
+
+25. Customize Bash
+
+```sh
+mkdir -p ~/wks/src
+cd ~/wks/src
+git clone https://github.com/newlight77/macosx
+cd macosx
+./bash_custom/customized.sh
+```
+
 ## Useful links
 
 You may refer to the following links to see how tools installation can be fully automated.
