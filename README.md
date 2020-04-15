@@ -85,6 +85,10 @@ brew install \
     curl \
     jq \
     htop \
+    tldr \
+    ncdu \
+    taskwarrior \
+    tmux \
     HTTPie \
     tree \
     wget
@@ -122,7 +126,46 @@ curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utili
 curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 ```
 
-7. Python utility :
+Theme : 
+
+```sh
+brew install romkatv/powerlevel10k/powerlevel10k
+
+echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+```
+
+Plugins :
+
+```sh
+brew install zsh-syntax-highlighting
+
+echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
+```
+
+```sh
+brew install zsh-autosuggestions
+
+echo 'source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+
+```
+
+```sh
+brew install zsh-history-substring-search
+
+echo 'source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zshrc
+```
+
+Oh-my-zsh plugins :
+
+```sh
+sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copydir copyfile docker docker-compose dotenv encode64 extract git jira jsontools node npm npx osx urltools vi-mode vscode web-search z)/g" ~/.zshrc
+```
+
+```sh
+echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zshrc
+```
+
+1. Python utility :
 
 ```sh
 brew install \
@@ -339,3 +382,4 @@ You may refer to the following links to see how tools installation can be fully 
 - [:rocket: MacOS setup](https://github.com/sb2nov/mac-setup)
 - [MacOS machine config](https://github.com/bkuhlmann/mac_os-config)
 - [MacOS machine setup](https://github.com/bkuhlmann/mac_os)
+- [Set Up Your MacBook for Web Development](https://medium.com/better-programming/setting-up-your-mac-for-web-development-in-2020-659f5588b883#a175)
