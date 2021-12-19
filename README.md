@@ -37,8 +37,10 @@ xcode-select --install
 Installing Homebrew is straightforward as long as you understand the Mac Terminal.
 
 ```sh
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 ```
 
@@ -131,7 +133,7 @@ Theme :
 ```sh
 brew install romkatv/powerlevel10k/powerlevel10k
 
-echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+echo 'source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 ```
 
 Plugins :
@@ -139,20 +141,20 @@ Plugins :
 ```sh
 brew install zsh-syntax-highlighting
 
-echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
+echo 'source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
 ```
 
 ```sh
 brew install zsh-autosuggestions
 
-echo 'source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+echo 'source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
 
 ```
 
 ```sh
 brew install zsh-history-substring-search
 
-echo 'source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zshrc
+echo 'source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zshrc
 ```
 
 Oh-my-zsh plugins :
@@ -222,6 +224,8 @@ brew install \
 SDKMAN (optional) :
 ```sh
 curl -s "https://get.sdkman.io" | bash
+
+echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zprofile
 
 # sdk install java x.y.z-adpt
 # sdk install java x.y.z-open
