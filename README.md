@@ -91,8 +91,10 @@ export GPG_TTY=$(tty)
 echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
 
 # This tells gpg to use the gpg-agent
+mkdir  ~/.gnupg
 echo 'use-agent' > ~/.gnupg/gpg.conf
-
+echo 'use-standard-socket
+pinentry-program $(brew --prefix)/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
 
 gpg --full-generate-key
 # then follow instructions in command line
