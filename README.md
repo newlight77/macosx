@@ -75,11 +75,25 @@ The SSH protocol uses public key cryptography for authenticating hosts and users
 Ssh-keygen is a tool for creating new authentication key pairs for SSH. Such key pairs are used for automating logins, single sign-on, and for authenticating hosts.
 
 ```sh
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+#ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+ssh-keygen -t ed25519
 # then follow instructions in command line
 
+# kill ssh-agent
+eval "$(ssh-agent -k)"
+
+# start ssh-agent
 eval "$(ssh-agent -s)"
-ssh-add -K ~/.ssh/id_rsa
+
+#ssh-add -K ~/.ssh/id_rsa
+ssh-add -K ~/.ssh/id_ed25519
+# Enter passphrase for /Users/user/.ssh/id_ed25519:
+# Identity added: /Users/user/.ssh/id_ed25519 
+
+# Copy the contents of the id_ed25519.pub file to your clipboard
+pbcopy < ~/.ssh/id_ed25519.pub
+# Load your GitHub Settings page for adding an SSH key and paste the contents of your clipboard
 ```
 
 - The GNU Privacy Guard
@@ -87,29 +101,37 @@ ssh-add -K ~/.ssh/id_rsa
 GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories.
 
 ```sh
-brew install gnupg pinentry-mac  
+brew install gpg2 gnupg pinentry-mac  
 
 export GPG_TTY=$(tty)
 echo 'export GPG_TTY=$(tty)' >> ~/.zprofile
 
 # This tells gpg to use the gpg-agent
 mkdir  ~/.gnupg
-echo 'use-agent' > ~/.gnupg/gpg.conf
-echo 'use-standard-socket
-pinentry-program $(brew --prefix)/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
+chmod 700 ~/.gnupg
+
 
 gpg --full-generate-key
 # then follow instructions in command line
 
+
+# remove key
+# gpg --delete-key key-ID
+
+
+echo 'use-agent' > ~/.gnupg/gpg.conf
+echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
+
+
 # get your key id
 # gpg -k
 # sec rsa4096/######## YYYY-MM-DD [SC] [expires: YYYY-MM-DD]
-gpg --list-secret-keys --keyid-format=long
+gpg --list-keys --keyid-format=long
 
 # The export command below gives you the key you add to GitHub
-# Prints the GPG key ID, in ASCII armor format
-gpg --armor --export <your key id>
-# Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
+gpg --armor --export <your key id> | pbcopy
+# GPG key copied to clipboard, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----
+# Add a new PGP key to your GitHub keys page
 
 # Configure Git to use gpg
 git config --global gpg.program $(which gpg)
@@ -118,7 +140,17 @@ git config --global commit.gpgsign true
 
 # If you have any errors when generating a key regarding gpg-agent, try the following command to see what error it generates:
 gpgconf --kill gpg-agent
+killall gpg-agent
 gpg-agent --daemon
+gpg-connect-agent reloadagent /bye
+```
+
+Check if the gpg is properly installed:
+
+```
+which gpg
+gpg --version
+echo "test" | gpg --clearsign
 ```
 
 ## Install CLI tools
