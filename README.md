@@ -212,7 +212,7 @@ brew install \
 10. Java utility :
 
 ```sh
-brew cask install adoptopenjdk \
+brew install --cask adoptopenjdk \
     java
 
 brew install \
@@ -248,7 +248,7 @@ You may refer to all available tools at [Homebrew cask formula](https://formulae
 12. General Purpose Tools
 
 ```sh
-brew cask install \
+brew install --cask \
     dropbox \
     evernote \
     firefox \
@@ -260,7 +260,7 @@ brew cask install \
 13. Docker with UI :
 
 ```sh
-brew cask install \
+brew install --cask \
     docker \
     docker-toolbox
 ```
@@ -268,7 +268,7 @@ brew cask install \
 14. Virtual Machine
 
 ```sh
-brew cask install \
+brew install --cask \
     virtualbox \
     vagrant
 ```
@@ -276,8 +276,7 @@ brew cask install \
 15. IDE
 
 ```sh
-brew tap caskroom/cask 
-brew cask install \
+brew install --cask \
     atom \
     visual-studio-code \
     intellij-idea-ce 
@@ -286,7 +285,7 @@ brew cask install \
 16. Complementary Dev Tools
 
 ```sh
-brew cask install \
+brew install --cask \
     cmake \
     cheatsheet \
     chrome-devtools \
@@ -300,7 +299,7 @@ brew cask install \
 17. System Status
 
 ```sh
-brew cask install \
+brew install --cask \
     flux \
     gfxcardstatus
 ```
@@ -308,21 +307,21 @@ brew cask install \
 18. System Cleaning
 
 ```sh
-brew cask install \
+brew install --cask \
     appcleaner
 ```
 
 19. VPN
 
 ```sh
-brew cask install \
+brew install --cask \
     tunnelblick
 ```
 
 20. Peer-2-Peer :
 
 ```sh
-brew cask install \
+brew install --cask \
     transmission
 ```
 
@@ -335,14 +334,14 @@ Configure Transmission blocking list :
 21. Photos
 
 ```sh
-brew cask install \
+brew install --cask \
     gimp
 ```
 
 22. Multimedia
 
 ```sh
-brew cask install \
+brew install --cask \
     kodi \
     spectacle \
     spotify \
@@ -355,14 +354,14 @@ brew cask install \
 If you think one day you will need to connect a Windows formated Storage Drive (e.g. USB key), then this may be useful.
 
 ```sh
-brew cask install osxfuse
+brew install --cask osxfuse
 brew install ntfs-3g
 ```
 
 24. Paying software
 
 ```sh
-brew cask install \
+brew install --cask \
     bartender\ 
     ccleaner
 ```
