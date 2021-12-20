@@ -44,7 +44,21 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 ```
 
-3. SSH
+
+5. Git
+
+```sh
+brew install \
+    git \
+    tig
+
+git config --global core.editor nano
+git config --global user.name 'fullname'
+git config --global user.email 'example@mail.com'
+```
+
+
+4. SSH
 
 Many of us are familiar with Secure Shell (SSH), which allows us to connect to other systems using a key instead of a password. This guide will explain how to eliminate SSH keys and use a GNU Privacy Guard (GPG) subkey instead.
 
@@ -106,7 +120,7 @@ gpg-agent --daemon
 
 You may refer to all available tools at [Homebrew formula](https://formulae.brew.sh/formula/). For the following steps, you will be install programming languages, and CLI tools for development purpose, so you won't have any details about each package to be installed.
 
-4. Http utility :
+5. Http utility :
 
 ```sh
 brew install \
@@ -120,14 +134,6 @@ brew install \
     HTTPie \
     tree \
     wget
-```
-
-5. git utility :
-
-```sh
-brew install \
-    git \
-    tig
 ```
 
 6. Shell Utility :
@@ -399,8 +405,8 @@ brew install --cask \
 ```sh
 mkdir -p ~/wks/src
 cd ~/wks/src
-git clone https://github.com/newlight77/macosx
-cd macosx
+git clone https://github.com/newlight77/bash_custom
+cd bash_custom
 ./bash_custom/customized.sh
 ```
 
