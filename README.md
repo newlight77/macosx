@@ -71,9 +71,35 @@ GnuPG is a complete and free implementation of the OpenPGP standard as defined b
 
 ```sh
 brew install gpg
+brew install gpg2 gnupg pinentry-mac  
+
+export GPG_TTY=$(tty)
+echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
+
+# This tells gpg to use the gpg-agent
+echo 'use-agent' > ~/.gnupg/gpg.conf
+
 
 gpg --full-generate-key
 # then follow instructions in command line
+
+# get your key id
+# gpg -k
+# sec rsa4096/######## YYYY-MM-DD [SC] [expires: YYYY-MM-DD]
+gpg --list-secret-keys --keyid-format=long
+
+# The export command below gives you the key you add to GitHub
+# Prints the GPG key ID, in ASCII armor format
+gpg --armor --export <your key id>
+# Copy your GPG key, beginning with -----BEGIN PGP PUBLIC KEY BLOCK----- and ending with -----END PGP PUBLIC KEY BLOCK-----.
+
+# Configure Git to use gpg
+git config --global gpg.program $(which gpg)
+git config --global user.signingkey ########
+git config --global commit.gpgsign true
+
+# If you have any errors when generating a key regarding gpg-agent, try the following command to see what error it generates:
+gpg-agent --daemon
 ```
 
 ## Install CLI tools
