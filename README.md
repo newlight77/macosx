@@ -77,6 +77,9 @@ Ssh-keygen is a tool for creating new authentication key pairs for SSH. Such key
 ```sh
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 # then follow instructions in command line
+
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa
 ```
 
 - The GNU Privacy Guard
