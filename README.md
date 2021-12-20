@@ -84,11 +84,10 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories.
 
 ```sh
-brew install gpg
-brew install gpg2 gnupg pinentry-mac  
+brew install gnupg pinentry-mac  
 
 export GPG_TTY=$(tty)
-echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile
+echo 'export GPG_TTY=$(tty)' >> ~/.zprofile
 
 # This tells gpg to use the gpg-agent
 mkdir  ~/.gnupg
@@ -115,6 +114,7 @@ git config --global user.signingkey ########
 git config --global commit.gpgsign true
 
 # If you have any errors when generating a key regarding gpg-agent, try the following command to see what error it generates:
+gpgconf --kill gpg-agent
 gpg-agent --daemon
 ```
 
