@@ -334,8 +334,15 @@ brew install --cask \
     docker-toolbox
 ```
 
+```sh
+brew install \
+    minikube \
+    kind
+```
+
 14. Virtual Machine
 
+* virtualbox not yet compatible with M1 arm machine
 ```sh
 brew install --cask \
     virtualbox \
@@ -442,7 +449,7 @@ brew install --cask \
 ```sh
 mkdir -p ~/wks/src
 cd ~/wks/src
-git clone https://github.com/newlight77/bash_custom
+git clone https://github.com/newlight77/macosx
 cd bash_custom
 ./bash_custom/customized.sh
 ```
