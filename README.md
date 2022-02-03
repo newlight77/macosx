@@ -236,6 +236,8 @@ sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copydir copy
 echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zshrc
 ```
 
+Restart your machine.
+
 1. Python utility :
 
 ```sh
@@ -249,7 +251,7 @@ Install pip :
 
 ```sh
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py --user
+#python get-pip.py --user
 pip3 install --upgrade setuptools
 pip3 install --upgrade pip
 ```
@@ -272,20 +274,23 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | b
 9. Docker utility :
 
 ```sh
+brew install docker
+```
+
+```sh
 brew install \
-    docker \
-    docker-compose \
-    docker-completion
+    minikube \
+    kind
 ```
 
 10. Java utility :
 
 ```sh
-brew install --cask adoptopenjdk \
-    java
+brew install --cask adoptopenjdk
 
 brew install \
     maven \
+    gradle \
     scala \
     sbt
 ```
@@ -329,15 +334,8 @@ brew install --cask \
 13. Docker with UI :
 
 ```sh
-brew install --cask \
-    docker \
-    docker-toolbox
-```
-
-```sh
-brew install \
-    minikube \
-    kind
+brew install --cask docker
+# brew install --cask docker-toolbox
 ```
 
 14. Virtual Machine
@@ -362,13 +360,13 @@ brew install --cask \
 
 ```sh
 brew install --cask \
-    cmake \
+    # cmake \
     cheatsheet \
     chrome-devtools \
-    github \
-    gitkraken \
+    # github \
+    # gitkraken \
     iterm2 \
-    kafka-tool \
+    # kafka-tool \
     postman
 ```
 
@@ -430,6 +428,7 @@ brew install --cask \
 If you think one day you will need to connect a Windows formated Storage Drive (e.g. USB key), then this may be useful.
 
 ```sh
+# not compatible with M1
 brew install --cask osxfuse
 brew install ntfs-3g
 ```
