@@ -460,11 +460,7 @@ brew install --cask \
 25. Customize Bash
 
 ```sh
-mkdir -p ~/wks/src
-cd ~/wks/src
-git clone https://github.com/newlight77/macosx
-cd bash_custom
-./bash_custom/customized.sh
+curl https://github.com/newlight77/macosx/blob/master/bash_custom/customize.sh | bash
 ```
 
 ## Useful links
