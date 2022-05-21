@@ -231,7 +231,7 @@ echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/
 ```sh
 brew install zsh-history-substring-search
 
-echo 'source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
+echo 'source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
 ```
 
 ```sh
