@@ -40,7 +40,7 @@ Installing Homebrew is straightforward as long as you understand the Mac Termina
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 brew update
 ```
 
