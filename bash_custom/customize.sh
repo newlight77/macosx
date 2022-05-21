@@ -1,20 +1,19 @@
 #!/bin/bash
 
-DIR=${0%/*}
-echo "current dir: " $DIR
-
-if [ ! -d "$DIR" ]; then DIR="$PWD"; fi
-
 echo "*** ------  Customize Bash------ ***" 1>&2
+
+git clone https://github.com/newlight77/bash_custom.git /tmp/bash_custom && /tmp/bash_custom
 
 mv ~/.bash_custom ~/.bash_custom.$(date +%Y%m%d-%H%M)
 mkdir -p ~/.bash_custom
 
+DIR="$PWD"
+
 cp  ${DIR}/profile/.bashrc            ~/.bash_custom/.bashrc
-cp  ${DIR}/profile/.bashrc_alias      ~/.bash_custom/.bashrc_alias
-cp  ${DIR}/profile/.bashrc_natelandau ~/.bash_custom/.bashrc_natelandau
-cp  ${DIR}/profile/.bashrc_vars       ~/.bash_custom/.bashrc_vars
-cp  ${DIR}/profile/.gitconfig_alias   ~/.bash_custom/.gitconfig_alias
+cp  ${DIR}/profile/.bashrc_alias      ~/.bash_custom/profile/.bashrc_alias
+#cp  ${DIR}/profile/.bashrc_natelandau ~/.bash_custom/profile/.bashrc_natelandau
+cp  ${DIR}/profile/.bashrc_vars       ~/.bash_custom/profile/.bashrc_vars
+cp  ${DIR}/profile/.gitconfig_alias   ~/.bash_custom/profile/.gitconfig_alias
 
 if [[ ! ~/.bashrc ||  $(grep ".bash_custom" ~/.bashrc) == "" ]] ; then
   cat ~/.bashrc    >> ~/.bashrc.$(date +%Y%m%d-%H%M)
@@ -34,11 +33,6 @@ fi
 if [ ! -f ${DIR}/ssh-copy-id.sh ] ; then
   cp ${DIR}/profile/ssh-copy-id.sh            ~/.bash_custom/ssh-copy-id.sh
   sh ~/.bash_custom/ssh-copy-id.sh
-fi
-
-if [ ! -f ${DIR}/prepare-workspace.sh ] ; then
-  cp ${DIR}/profile/prepare-workspace.sh      ~/.bash_custom/prepare-workspace.sh
-  sh ~/.bash_custom/prepare-workspace.sh
 fi
 
 if [ ! -f ${DIR}/profile/.ssh-config ] ; then
