@@ -38,7 +38,7 @@ Installing Homebrew is straightforward as long as you understand the Mac Termina
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
@@ -120,7 +120,7 @@ gpg --full-generate-key
 
 
 echo 'use-agent' > ~/.gnupg/gpg.conf
-echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
+echo 'pinentry-program /usr/local/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
 
 
 # get your key id
@@ -202,7 +202,7 @@ Theme :
 ```sh
 brew install romkatv/powerlevel10k/powerlevel10k
 
-echo 'source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 ```
 
 Plugins :
