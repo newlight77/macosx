@@ -176,26 +176,7 @@ brew install \
 ```sh
 brew install \
     bash-completion \
-    zsh \
-    zsh-autosuggestions \
-    zsh-completions \
-    zsh-syntax-highlighting \
-    zsh-navigation-tools
-    
-echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-
-echo "
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-  fi
- " >> ~/.zshrc
-
-echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-
-echo "source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh" >> ~/.zshrc
+    zsh
 
 echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zshrc
 ```
@@ -222,22 +203,41 @@ echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zs
 Plugins :
 
 ```sh
+brew install zsh-completions
+
+echo "
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+  fi
+" >> ~/.zprofile
+```
+
+```sh
 brew install zsh-syntax-highlighting
 
-echo 'source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
+echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zprofile
 ```
 
 ```sh
 brew install zsh-autosuggestions
 
-echo 'source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 
 ```
 
 ```sh
 brew install zsh-history-substring-search
 
-echo 'source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zshrc
+echo 'source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
+```
+
+```sh
+brew install zsh-navigation-tools
+
+echo 'source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh' >> ~/.zprofile
 ```
 
 Oh-my-zsh plugins :
