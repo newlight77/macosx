@@ -164,9 +164,7 @@ brew install \
     curl \
     jq \
     htop \
-    tldr \
     ncdu \
-    taskwarrior \
     tmux \
     HTTPie \
     tree \
@@ -177,13 +175,29 @@ brew install \
 
 ```sh
 brew install \
-    lsd \
     bash-completion \
     zsh \
     zsh-autosuggestions \
     zsh-completions \
     zsh-syntax-highlighting \
     zsh-navigation-tools
+    
+echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+
+echo "
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+  fi
+ " >> ~/.zshrc
+
+echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+
+echo "source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh" >> ~/.zshrc
+
+echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zshrc
 ```
 
 oh-my-zsh :
