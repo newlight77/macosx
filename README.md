@@ -460,7 +460,7 @@ brew install --cask \
 25. Customize Bash
 
 ```sh
-curl https://github.com/newlight77/macosx/blob/master/bash_custom/customize.sh | bash
+curl https://raw.githubusercontent.com/newlight77/bash_custom/master/customize.sh | bash
 ```
 
 ## Useful links
