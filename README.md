@@ -243,7 +243,7 @@ echo 'source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.z
 Oh-my-zsh plugins :
 
 ```sh
-sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copydir copyfile docker docker-compose dotenv encode64 extract git jira jsontools node npm npx osx urltools vi-mode vscode web-search z)/g" ~/.zshrc
+sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath copyfile docker docker-compose dotenv encode64 extract git jira jsontools node npm npx osx urltools vi-mode vscode web-search z)/g" ~/.zshrc
 ```
 
 ```sh
