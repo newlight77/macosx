@@ -18,7 +18,9 @@ If you still need it, you can proceed the following step.
 
 ### Enabling the Root User Account
 
-`System prefs > Users & Groups > Login options > Join ... > Open Directory Utility ... > (Menu) Edit > Enable Root User`
+`System prefs > Users & Groups > Login options > Network Account Server : Join ... > Open Directory Utility ... > (Menu) Edit > Enable Root User`
+
+However, this 'Enable Root User' option may have been removed from late macos version, and an admin user can use sudo.
 
 ## First Steps
 
@@ -38,12 +40,17 @@ Installing Homebrew is straightforward as long as you understand the Mac Termina
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
 
+# Intel chips
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/usr/local/bin/brew shellenv)"
+
+# M chips
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 brew update
 ```
-
 
 5. Git
 
