@@ -127,7 +127,10 @@ gpg --full-generate-key
 
 
 echo 'use-agent' > ~/.gnupg/gpg.conf
+# Intel chips
 echo 'pinentry-program /usr/local/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
+# M chips
+echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
 
 
 # get your key id
