@@ -190,8 +190,6 @@ brew install bash-completion
 echo '[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
 
 brew install zsh
-
-echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zshrc
 ```
 
 oh-my-zsh :
@@ -237,6 +235,10 @@ if type brew &>/dev/null; then
 ```sh
 brew install zsh-syntax-highlighting
 
+# M chips
+echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zshenv
+
+# Intel
 echo 'export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters' >> .zshenv
 
 echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zprofile
