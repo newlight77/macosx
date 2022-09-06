@@ -188,11 +188,15 @@ brew install bash-completion
 
 # M chips
 echo '[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
+```
 
+
+oh-my-zsh :
+
+```sh
 brew install zsh
 ```
 
-oh-my-zsh :
 ```sh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
@@ -271,7 +275,7 @@ brew install zsh-navigation-tools
 echo 'source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh' >> ~/.zprofile
 
 # M chips
-echo 'source /opt/homebrew/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zs' >> ~/.zprofile
+echo 'source /opt/homebrew/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh' >> ~/.zprofile
 ```
 
 Oh-my-zsh plugins :
