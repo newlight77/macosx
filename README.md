@@ -236,10 +236,10 @@ if type brew &>/dev/null; then
 brew install zsh-syntax-highlighting
 
 # Intel 
-echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zshenv
+echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zprofile
 
 # M chips
-echo 'export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters' >> .zshenv
+echo 'export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters' >> .zprofile
 
 #echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zprofile
 ```
@@ -277,7 +277,7 @@ echo 'source /opt/homebrew/share/zsh-navigation-tools/zsh-navigation-tools.plugi
 Oh-my-zsh plugins :
 
 ```sh
-sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath copyfile docker docker-compose dotenv encode64 extract git jira jsontools node npm npx osx urltools vi-mode vscode web-search z)/g" ~/.zshrc
+sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath copyfile docker docker-compose dotenv encode64 extract git jira jsontools node npm npx urltools vi-mode vscode web-search z)/g" ~/.zshrc
 ```
 
 ```sh
