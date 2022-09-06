@@ -210,8 +210,8 @@ Theme :
 brew install romkatv/powerlevel10k/powerlevel10k
 
 # M chips
-#echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
-echo "source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
+#echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zprofile
+echo "source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zprofile
 ```
 
 Plugins :
@@ -235,23 +235,23 @@ if type brew &>/dev/null; then
 ```sh
 brew install zsh-syntax-highlighting
 
-# M chips
+# Intel 
 echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zshenv
 
-# Intel
+# M chips
 echo 'export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters' >> .zshenv
 
-echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zprofile
+#echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zprofile
 ```
 
 ```sh
 brew install zsh-autosuggestions
 
 # Intel chips
-echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zprofile
 
 # M chips
-echo "source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+echo "source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zprofile
 
 ```
 
@@ -281,7 +281,7 @@ sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath cop
 ```
 
 ```sh
-echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zshrc
+echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
 ```
 
 Restart your machine.
