@@ -184,9 +184,12 @@ brew install \
 6. Shell Utility :
 
 ```sh
-brew install \
-    bash-completion \
-    zsh
+brew install bash-completion
+
+# M chips
+echo '[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
+
+brew install zsh
 
 echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zshrc
 ```
@@ -199,6 +202,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 Shell Integration:
 ```sh
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+
 curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 ```
 
@@ -207,13 +211,18 @@ Theme :
 ```sh
 brew install romkatv/powerlevel10k/powerlevel10k
 
-echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+# M chips
+#echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+echo "source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
 ```
 
 Plugins :
 
 ```sh
 brew install zsh-completions
+
+# M chips
+chmod -R go-w '/opt/homebrew/share/zsh'
 
 echo "
 if type brew &>/dev/null; then
@@ -228,26 +237,39 @@ if type brew &>/dev/null; then
 ```sh
 brew install zsh-syntax-highlighting
 
+echo 'export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters' >> .zshenv
+
 echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zprofile
 ```
 
 ```sh
 brew install zsh-autosuggestions
 
+# Intel chips
 echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+
+# M chips
+echo "source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 
 ```
 
 ```sh
 brew install zsh-history-substring-search
 
+# Intel chips
 echo 'source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
+# M Chips
+echo 'source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
 ```
 
 ```sh
 brew install zsh-navigation-tools
 
+# Intel
 echo 'source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh' >> ~/.zprofile
+
+# M chips
+echo 'source /opt/homebrew/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zs' >> ~/.zprofile
 ```
 
 Oh-my-zsh plugins :
