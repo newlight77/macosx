@@ -426,6 +426,14 @@ curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-uti
 NeoVim Customization :
 
 ```sh
+brew install neovim
+pip3 install pynvim
+
+# I think these 3 are not required
+#pip3 install 'python-lsp-server[all]'
+#brew install ripgrep
+#brew install fd
+
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-nvim.sh | bash
 ```
 
