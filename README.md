@@ -412,12 +412,40 @@ echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zprofile
 
 ```
 
-## Bash Customization
+## Terminal Customization
 
-25. Customize Bash
+16. dotfiles customisation
+
+Customize Bash :
 
 ```sh
-curl https://raw.githubusercontent.com/newlight77/bash_custom/master/customize.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-bash.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-util.sh | bash
+```
+
+NeoVim Customization :
+
+```sh
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-nvim.sh | bash
+```
+
+Git Customization :
+```sh
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-git.sh | bash
+
+git config --global core.editor nano
+git config --global user.name 'fullname'
+git config --global user.email 'example@mail.com'
+```
+
+Undo it:
+
+```sh
+m -fr /tmp/dotfiles
+rm -rf $HOME/.config/bash
+rm -rf $HOME/.config/git
+rm -rf $HOME/.config/nvim
+rm -rf $HOME/.onfig/util
 ```
 
 ## Useful links
@@ -428,3 +456,5 @@ You may refer to the following links to see how tools installation can be fully 
 - [MacOS machine config](https://github.com/bkuhlmann/mac_os-config)
 - [MacOS machine setup](https://github.com/bkuhlmann/mac_os)
 - [Set Up Your MacBook for Web Development](https://medium.com/better-programming/setting-up-your-mac-for-web-development-in-2020-659f5588b883#a175)
+- [dotfiles setup](https://github.com/newlight77/dotfiles)
+
