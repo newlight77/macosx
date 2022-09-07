@@ -336,13 +336,59 @@ brew intsall nvm
 brew install docker
 ```
 
+Docker with UI :
+
 ```sh
-brew install \
-    minikube \
-    kind
+brew install --cask docker
+# brew install --cask docker-toolbox
 ```
 
-10. Java utility :
+```sh
+brew install minikube kind
+```
+
+10. IDE
+
+```sh
+brew install --cask visual-studio-code
+brew install --cask intellij-idea-ce 
+brew install --cask atom
+```
+
+11. Complementary Dev Tools
+
+```sh
+brew install --cask \
+    iterm2 \
+    cheatsheet \
+    chrome-devtools \
+    postman \
+    # cmake \
+    # gitkraken \
+    # kafka-tool
+```
+
+12. Ansible (optional) :
+
+```sh
+brew install ansible
+```
+
+13. Paas (optional) :
+
+```sh
+brew install heroku/brew/heroku
+```
+
+14. Virtual Machine (optional) :
+
+* virtualbox not yet compatible with M1 arm machine
+
+```sh
+brew install --cask virtualbox vagrant
+```
+
+15. Java utility (optional) :
 
 ```sh
 brew install --cask adoptopenjdk
@@ -366,22 +412,6 @@ echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zprofile
 
 ```
 
-Docker with UI :
-
-```sh
-brew install --cask docker
-# brew install --cask docker-toolbox
-```
-
-
-11. Paas 
-
-```sh
-brew install \
-    ansible
-    heroku/brew/heroku
-```
-
 ## Install tools with UI
 
 You may refer to all available tools at [Homebrew cask formula](https://formulae.brew.sh/cask/). 
@@ -396,38 +426,6 @@ brew install --cask \
     google-chrome \
     mailspring \
     slack
-```
-
-14. Virtual Machine
-
-* virtualbox not yet compatible with M1 arm machine
-```sh
-brew install --cask \
-    virtualbox \
-    vagrant
-```
-
-15. IDE
-
-```sh
-brew install --cask \
-    atom \
-    visual-studio-code \
-    intellij-idea-ce 
-```
-
-16. Complementary Dev Tools
-
-```sh
-brew install --cask \
-    # cmake \
-    cheatsheet \
-    chrome-devtools \
-    # github \
-    # gitkraken \
-    iterm2 \
-    # kafka-tool \
-    postman
 ```
 
 17. System Status
