@@ -195,6 +195,12 @@ oh-my-zsh :
 
 ```sh
 brew install zsh
+
+# Intel
+chmod -R 755 /usr/local/share/zsh
+
+# M chips
+chmod -R go-w '/opt/homebrew/share/zsh'
 ```
 
 ```sh
@@ -320,7 +326,8 @@ brew install \
 NVM :
 
 ```sh
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+brew intsall nvm
+#curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 ```
 
 9. Docker utility :
@@ -359,6 +366,14 @@ echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zprofile
 
 ```
 
+Docker with UI :
+
+```sh
+brew install --cask docker
+# brew install --cask docker-toolbox
+```
+
+
 11. Paas 
 
 ```sh
@@ -381,13 +396,6 @@ brew install --cask \
     google-chrome \
     mailspring \
     slack
-```
-
-13. Docker with UI :
-
-```sh
-brew install --cask docker
-# brew install --cask docker-toolbox
 ```
 
 14. Virtual Machine
