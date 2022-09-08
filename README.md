@@ -200,19 +200,13 @@ chmod -R go-w '$(brew --prefix)/share/zsh'
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+Then open a new tab/terminal to spawn a new zsh console in order to customize your oh-my-zsh.
+
 Shell Integration:
 ```sh
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 
 curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
-```
-
-Theme : 
-
-```sh
-brew install romkatv/powerlevel10k/powerlevel10k
-
-echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zprofile
 ```
 
 Plugins :
@@ -222,7 +216,7 @@ brew install zsh-completions
 
 chmod -R go-w '$(brew --prefix)/share/zsh'
 
-echo "
+echo '
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
     FPATH=$(brew --prefix)/share/zsh-navigation-tools:$FPATH
@@ -235,14 +229,14 @@ if type brew &>/dev/null; then
 
     autoload -Uz compinit
     compinit
-  fi
-" >> ~/.zprofile
+fi
+' >> ~/.zprofile
 ```
 
 ```sh
 brew install zsh-autosuggestions
 
-echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zprofile
+echo 'source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zprofile
 
 ```
 
@@ -261,7 +255,7 @@ echo 'source $(brew --prefix)/share/zsh-navigation-tools/zsh-navigation-tools.pl
 ```sh
 brew install zsh-syntax-highlighting
 
-echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$(brew --prefix)/share/zsh-syntax-highlighting/highlighters" >> ~/.zprofile
+echo 'export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$(brew --prefix)/share/zsh-syntax-highlighting/highlighters' >> ~/.zprofile
 ```
 
 Oh-my-zsh plugins :
@@ -274,9 +268,17 @@ sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath cop
 echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
 ```
 
+Theme : 
+
+```sh
+brew install romkatv/powerlevel10k/powerlevel10k
+
+echo 'source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zprofile
+```
+
 Restart your machine.
 
-6.1 Reset oh-my-zsh:
+6.1 Reset oh-my-zsh (if needed):
 
 ```sh
 rm -f ~/.zshrc*
