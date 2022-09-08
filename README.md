@@ -434,7 +434,7 @@ npm install -g typescript-language-server typescript
 npm install -g graphql-language-service-server
 
 npm install -g pyright
-pip install "python-language-server[all]"
+pip3 install "python-language-server[all]"
 
 npm install -g dockerfile-language-server-nodejs
 
