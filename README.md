@@ -127,10 +127,7 @@ gpg --full-generate-key
 
 
 echo 'use-agent' > ~/.gnupg/gpg.conf
-# Intel chips
-echo 'pinentry-program /usr/local/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
-# M chips
-echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
+echo 'pinentry-program $(brew --prefix)/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf
 
 
 # get your key id
@@ -186,8 +183,7 @@ brew install \
 ```sh
 brew install bash-completion
 
-# M chips
-echo '[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
+echo '[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
 ```
 
 
@@ -196,11 +192,8 @@ oh-my-zsh :
 ```sh
 brew install zsh
 
-# Intel
-chmod -R 755 /usr/local/share/zsh
-
-# M chips
-chmod -R go-w '/opt/homebrew/share/zsh'
+#chmod -R 755 '$(brew --prefix)/share/zsh'
+chmod -R go-w '$(brew --prefix)/share/zsh'
 ```
 
 ```sh
@@ -220,8 +213,7 @@ Theme :
 brew install romkatv/powerlevel10k/powerlevel10k
 
 # M chips
-#echo 'source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zprofile
-echo "source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zprofile
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zprofile
 ```
 
 Plugins :
@@ -235,6 +227,13 @@ chmod -R go-w '/opt/homebrew/share/zsh'
 echo "
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    FPATH=$(brew --prefix)/share/zsh-navigation-tools:$FPATH
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+    FPATH=$HOME/.oh-my-zsh/plugins/git:$FPATH
+    FPATH=$HOME/.oh-my-zsh/lib/functions:$FPATH
+    FPATH=$HOME/.oh-my-zsh/lib/completions:$FPATH
+    FPATH=$HOME/.oh-my-zsh/cache/completions:$FPATH
+    FPATH=/opt/homebrew/Cellar/zsh/5.9/share/zsh/functions:$FPATH
 
     autoload -Uz compinit
     compinit
@@ -243,45 +242,28 @@ if type brew &>/dev/null; then
 ```
 
 ```sh
-brew install zsh-syntax-highlighting
-
-# Intel 
-echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters" >> ~/.zprofile
-
-# M chips
-echo 'export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters' >> .zprofile
-
-#echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zprofile
-```
-
-```sh
 brew install zsh-autosuggestions
 
-# Intel chips
-echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zprofile
-
-# M chips
-echo "source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zprofile
+echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zprofile
 
 ```
 
 ```sh
 brew install zsh-history-substring-search
 
-# Intel chips
-echo 'source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
-# M Chips
-echo 'source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
+echo 'source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh' >> ~/.zprofile
 ```
 
 ```sh
 brew install zsh-navigation-tools
 
-# Intel
-echo 'source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh' >> ~/.zprofile
+echo 'source $(brew --prefix)/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh' >> ~/.zprofile
+```
 
-# M chips
-echo 'source /opt/homebrew/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh' >> ~/.zprofile
+```sh
+brew install zsh-syntax-highlighting
+
+echo "export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$(brew --prefix)/share/zsh-syntax-highlighting/highlighters" >> ~/.zprofile
 ```
 
 Oh-my-zsh plugins :
