@@ -225,7 +225,7 @@ if type brew &>/dev/null; then
     FPATH=$HOME/.oh-my-zsh/lib/functions:$FPATH
     FPATH=$HOME/.oh-my-zsh/lib/completions:$FPATH
     FPATH=$HOME/.oh-my-zsh/cache/completions:$FPATH
-    FPATH=/opt/homebrew/Cellar/zsh/5.9/share/zsh/functions:$FPATH
+    #FPATH=$(brew --prefix)/Cellar/zsh/5.9/share/zsh/functions:$FPATH
 
     autoload -Uz compinit
     compinit
@@ -265,7 +265,7 @@ sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath cop
 ```
 
 ```sh
-echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
+export echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
 ```
 
 Theme : 
