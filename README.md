@@ -52,7 +52,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew update
 ```
 
-5. Git
+3. Git
 
 ```sh
 brew install \
@@ -63,7 +63,6 @@ git config --global core.editor nano
 git config --global user.name 'fullname'
 git config --global user.email 'example@mail.com'
 ```
-
 
 4. SSH
 
@@ -103,7 +102,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 # Load your GitHub Settings page for adding an SSH key and paste the contents of your clipboard
 ```
 
-- The GNU Privacy Guard
+5. GPG (TGNU Privacy Guard)
 
 GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories.
 
@@ -160,11 +159,12 @@ gpg --version
 echo "test" | gpg --clearsign
 ```
 
+
 ## Install CLI tools
 
 You may refer to all available tools at [Homebrew formula](https://formulae.brew.sh/formula/). For the following steps, you will be install programming languages, and CLI tools for development purpose, so you won't have any details about each package to be installed.
 
-5. Http utility :
+6. Http utility :
 
 ```sh
 brew install \
@@ -178,14 +178,13 @@ brew install \
     wget
 ```
 
-6. Shell Utility :
+7. Shell Utility :
 
 ```sh
 brew install bash-completion
 
 echo '[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
 ```
-
 
 oh-my-zsh :
 
@@ -278,14 +277,14 @@ echo 'source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.z
 
 Restart your machine.
 
-6.1 Reset oh-my-zsh (if needed):
+7.1 Reset oh-my-zsh (if needed):
 
 ```sh
 rm -f ~/.zshrc*
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 ```
 
-7. Python utility :
+8. Python utility :
 
 ```sh
 brew install \
@@ -303,7 +302,7 @@ pip3 install --upgrade setuptools
 pip3 install --upgrade pip
 ```
 
-8. Node utility :
+9. Node utility :
 
 ```sh
 brew install \
@@ -319,7 +318,7 @@ brew intsall nvm
 #curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 ```
 
-9. Docker utility :
+10. Docker utility :
 
 ```sh
 brew install docker
@@ -336,7 +335,7 @@ brew install --cask docker
 brew install minikube kind
 ```
 
-10. IDE
+11. IDE
 
 ```sh
 brew install --cask visual-studio-code
@@ -344,7 +343,7 @@ brew install --cask intellij-idea-ce
 brew install --cask atom
 ```
 
-11. Complementary Dev Tools
+12. Complementary Dev Tools
 
 ```sh
 brew install --cask \
@@ -357,19 +356,19 @@ brew install --cask \
     # kafka-tool
 ```
 
-12. Ansible (optional) :
+13. Ansible (optional) :
 
 ```sh
 brew install ansible
 ```
 
-13. Paas (optional) :
+14. Paas (optional) :
 
 ```sh
 brew install heroku/brew/heroku
 ```
 
-14. Virtual Machine (optional) :
+15. Virtual Machine (optional) :
 
 * virtualbox not yet compatible with M1 arm machine
 
@@ -377,7 +376,7 @@ brew install heroku/brew/heroku
 brew install --cask virtualbox vagrant
 ```
 
-15. Java utility (optional) :
+16. Java utility (optional) :
 
 ```sh
 brew install --cask adoptopenjdk
@@ -403,7 +402,7 @@ echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zprofile
 
 ## Terminal Customization
 
-16. dotfiles customisation
+17. dotfiles customisation
 
 Customize Bash :
 
@@ -460,6 +459,72 @@ rm -rf $HOME/.config/bash
 rm -rf $HOME/.config/git
 rm -rf $HOME/.config/nvim
 rm -rf $HOME/.onfig/util
+```
+
+## Github
+
+```sh
+echo '
+machine api.github.com
+login <user>
+password <token>
+' >> ~/.netrc
+```
+
+Github requires a personal access token, a gpg key, and a ssh key.
+
+Here we gonna need the generated GPG Key.
+
+```bash
+# get your key id
+# gpg -k
+# sec rsa4096/######## YYYY-MM-DD [SC] [expires: YYYY-MM-DD]
+```
+
+Now encrypt you email address using the gpg key, where <EMAIL> is the address you used when creating the key:
+
+```bash
+gpg -e -r <EMAIL> ~/.netrc
+```
+
+### Github enterprise
+
+If you want to access github entreprise on premiss, set this in vimrc :
+
+```bash
+let g:github_enterprise_urls = ['https://example.com']
+```
+
+### git credentials using git-credential-netrc (optional)
+
+Note : This step is already covered by [customize-git.sh](https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-git.sh).
+
+You gonna need a credential helper to decrypt the .netrc file automatically by git:
+
+```bash
+echo "creating folder $HOME/.config/util" 1>&2
+mkdir $HOME/.config/util/
+
+echo "retrieve the git-credential-netrc from github"
+curl -o $HOME/.config/util/git-credential-netrc https://raw.githubusercontent.com/git/git/master/contrib/credential/netrc/git-credential-netrc.perl
+chmod +x $HOME/.config/util/git-credential-netrc
+
+echo "adding export GPG_TTY and add git-credential-netrc to PATH in $HOME/.zshrc" 1>&2
+echo '
+# ===================================================================
+# added by https://github.com/newlight77/dotfiles
+export PATH=$HOME/.config/util/:$PATH
+export GPG_TTY=$(tty)
+# ===================================================================
+' >> $HOME/.zshrc
+```
+
+At last, configure git to use credential helper
+
+```bash
+git config --global credential.helper "netrc -f ~/.netrc.gpg -v"
+# automatically sign commits
+git config --global commit.gpgsign true
 ```
 
 ## Useful links
