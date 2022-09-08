@@ -220,7 +220,6 @@ Plugins :
 ```sh
 brew install zsh-completions
 
-# M chips
 chmod -R go-w '$(brew --prefix)/share/zsh'
 
 echo "
