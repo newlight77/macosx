@@ -426,6 +426,23 @@ pip3 install pynvim
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-nvim.sh | bash
 ```
 
+Examples of language server to be installed (support for LSP on Vim) :
+
+```sh
+npm install -g bash-language-server
+npm install -g typescript-language-server typescript
+npm install -g graphql-language-service-server
+
+npm install -g pyright
+pip install "python-language-server[all]"
+
+npm install -g dockerfile-language-server-nodejs
+
+#go get golang.org/x/tools/gopls@latest
+#composer require felixfbecker/language-server
+#dotnet tool install --global csharp-ls
+```
+
 Git Customization :
 ```sh
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-git.sh | bash
