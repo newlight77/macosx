@@ -212,7 +212,6 @@ Theme :
 ```sh
 brew install romkatv/powerlevel10k/powerlevel10k
 
-# M chips
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zprofile
 ```
 
@@ -222,7 +221,7 @@ Plugins :
 brew install zsh-completions
 
 # M chips
-chmod -R go-w '/opt/homebrew/share/zsh'
+chmod -R go-w '$(brew --prefix)/share/zsh'
 
 echo "
 if type brew &>/dev/null; then
@@ -278,7 +277,7 @@ echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
 
 Restart your machine.
 
-1. Python utility :
+7. Python utility :
 
 ```sh
 brew install \
