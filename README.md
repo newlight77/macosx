@@ -276,6 +276,13 @@ echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
 
 Restart your machine.
 
+6.1 Reset oh-my-zsh:
+
+```sh
+rm -f ~/.zshrc*
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+```
+
 7. Python utility :
 
 ```sh
