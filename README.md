@@ -62,6 +62,9 @@ brew install \
 git config --global core.editor nano
 git config --global user.name 'fullname'
 git config --global user.email 'example@mail.com'
+
+brew tap alajmo/mani
+brew install mani
 ```
 
 4. SSH
@@ -468,6 +471,10 @@ rm -rf $HOME/.onfig/util
 ```
 
 ## Github
+
+```sh
+brew install gh
+```
 
 ```sh
 echo '
