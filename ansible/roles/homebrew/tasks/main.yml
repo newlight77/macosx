@@ -1,7 +1,0 @@
----
-
-- include: brew.yml
-- include: brew-taps.yml
-- include: brew-packages.yml
-- include: brewfile.yml
-- include: brew-casks.yml

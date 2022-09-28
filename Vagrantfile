@@ -40,6 +40,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision "brew", inline: <<-SHELL
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+    eval "$(/usr/local/bin/brew shellenv)"
     brew update
+    brew install cmake
+    make setup
   SHELL
 end
