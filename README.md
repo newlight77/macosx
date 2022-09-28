@@ -15,6 +15,7 @@ This serves as a guideline to setup tools on your mac, you may follow them step 
 A bit more customization (optionally):
 
 -  [customize dotfiles](docs/setup_dotfiles.md)
+-  [additional tools](docs/additional_tools.md)
 
 Going further :
 
