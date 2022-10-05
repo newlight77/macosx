@@ -85,7 +85,7 @@ define brew_node
 endef
 
 define brew_nvm
-	brew intsall nvm
+	brew install nvm
 	mkdir $HOME/.nvm
 
 	echo 'export NVM_DIR="$HOME/.nvm"
