@@ -18,7 +18,9 @@ If you still need it, you can proceed the following step.
 
 ### Enabling the Root User Account
 
-`System prefs > Users & Groups > Login options > Join ... > Open Directory Utility ... > (Menu) Edit > Enable Root User`
+`System prefs > Users & Groups > Login options > Network Account Server : Join ... > Open Directory Utility ... > (Menu) Edit > Enable Root User`
+
+However, this 'Enable Root User' option may have been removed from late macos version, and an admin user can use sudo.
 
 ## First Steps
 
@@ -38,14 +40,20 @@ Installing Homebrew is straightforward as long as you understand the Mac Termina
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
 
+# Intel chips
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/usr/local/bin/brew shellenv)"
+
+# M chips
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 brew update
 ```
 
 
-5. Git
+3. Git
 
 ```sh
 brew install \
@@ -350,6 +358,7 @@ brew install --cask \
 ```sh
 brew install --cask docker
 # brew install --cask docker-toolbox
+brew install minikube kind
 ```
 
 14. Virtual Machine
@@ -471,3 +480,4 @@ You may refer to the following links to see how tools installation can be fully 
 - [MacOS machine config](https://github.com/bkuhlmann/mac_os-config)
 - [MacOS machine setup](https://github.com/bkuhlmann/mac_os)
 - [Set Up Your MacBook for Web Development](https://medium.com/better-programming/setting-up-your-mac-for-web-development-in-2020-659f5588b883#a175)
+- [dotfiles setup](https://github.com/newlight77/dotfiles)

@@ -2,15 +2,22 @@
 
 This serves as a guideline to setup tools on your mac, you may follow them step by step, or use the `make setup` as a Makefile is also present :
 
--  [setup macos](docs/setup_macos.md)
+-  [setup macos](docs/setup_macos.md) or [macos ultimate](docs/macos_ultimate_guide.md)
 -  [setup git](docs/setup_git.md)
 -  [setup ssh](docs/setup_ssh.md)
 -  [setup gpg](docs/setup_gpg.md)
 -  [setup github](docs/setup_github.md)
 -  [setup node](docs/setup_node.md)
 -  [setup zsh](docs/setup_zsh.md)
+-  [setup vscode](docs/setup_vscode.md) (upcoming)
 
 > Note that even running `make setup`, you still have a few manual tasks as suggested below.
+
+More setup (optionally):
+
+-  [with neovim setup](docs/setup_neovim.md)
+-  [with mani setup](docs/setup_mani.md)
+-  [with python setup](docs/setup_python.md)
 
 A bit more customization (optionally):
 
@@ -36,6 +43,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
 brew install cmake
+```
+
+```bash
+echo '
+GIT_USER_NAME=<your name>
+GIT_USER_EMAIL=<you email>
+GIT_EDITOR=nano or vi
+' > .env
 ```
 
 ```sh

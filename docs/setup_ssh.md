@@ -1,4 +1,4 @@
-## SSH
+# SSH
 
 Many of us are familiar with Secure Shell (SSH), which allows us to connect to other systems using a key instead of a password. This guide will explain how to eliminate SSH keys and use a GNU Privacy Guard (GPG) subkey instead.
 

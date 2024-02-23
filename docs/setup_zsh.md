@@ -1,4 +1,4 @@
-## Zsh / Oh-my-Zsh
+# Zsh / Oh-my-Zsh
 
 
 ```sh
@@ -85,7 +85,7 @@ sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath cop
 ```
 
 ```sh
-export echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
+echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
 ```
 
 Theme : 
@@ -103,22 +103,4 @@ Restart your machine.
 ```sh
 rm -f ~/.zshrc*
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-```
-
-8. Python utility :
-
-```sh
-brew install \
-    python \
-    pipenv \
-    pyenv 
-```
-
-Install pip :
-
-```sh
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-#python get-pip.py --user
-pip3 install --upgrade setuptools
-pip3 install --upgrade pip
 ```

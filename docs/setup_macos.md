@@ -106,7 +106,6 @@ brew install --cask docker
 brew install minikube kind
 ```
 
-
 Complementary Dev Tools
 
 ```sh
@@ -127,4 +126,3 @@ You may refer to the following links to see how tools installation can be fully 
 - [MacOS machine setup](https://github.com/bkuhlmann/mac_os)
 - [Set Up Your MacBook for Web Development](https://medium.com/better-programming/setting-up-your-mac-for-web-development-in-2020-659f5588b883#a175)
 - [dotfiles setup](https://github.com/newlight77/dotfiles)
-

@@ -1,4 +1,4 @@
-## GPG (TGNU Privacy Guard)
+# GPG (TGNU Privacy Guard)
 
 GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories.
 

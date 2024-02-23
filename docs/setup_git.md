@@ -1,4 +1,4 @@
-# Git
+# Git Configuration
 
 ```sh
 brew install \
@@ -8,9 +8,4 @@ brew install \
 git config --global core.editor nano
 git config --global user.name 'fullname'
 git config --global user.email 'example@mail.com'
-```
-
-```sh
-brew tap alajmo/mani
-brew install mani
 ```
