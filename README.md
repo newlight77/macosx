@@ -45,7 +45,7 @@ brew update
 brew install cmake
 ```
 
-### Configure git
+1. Configure git
 
 ```bash
 echo '
@@ -55,7 +55,7 @@ GIT_EDITOR=nano or vi
 ' > .env
 ```
 
-### Set a passphrase
+2. Set a passphrase
 
 ```bash
 echo '
@@ -63,7 +63,7 @@ PASSPHRASE=your passphrase for ssh key and gpg
 '
 ```
 
-### Run the setup
+3. Run the setup
 
 ```sh
 make setup
@@ -86,6 +86,20 @@ Once the ssh key is generated, you will have to copy/paste (pbcopy to clipboard)
 The gpg key generation is covered by `make setup`. For more detail, refer to [setup gpg](docs/setup_gpg.md).
 
 Once the gpg key is generated, you will have to copy/paste (pbcopy to clipboard) and declare it on your github asetting.
+
+
+## Recommendations
+
+- Customize [dotfiles](https://github.com/newlight77/dotfiles) : bash, git, zsh
+
+All pre-requisites are already installed by `make setup`.
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-bash.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-git.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-util.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-zsh.sh | bash
+````
 
 ## TODO
 
