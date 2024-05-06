@@ -49,7 +49,7 @@ gpg-connect-agent reloadagent /bye
 
 Check if the gpg is properly installed:
 
-```
+```sh
 which gpg
 gpg --version
 echo "test" | gpg --clearsign
