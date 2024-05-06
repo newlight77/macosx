@@ -99,7 +99,19 @@ curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-bas
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-git.sh | bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-util.sh | bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-zsh.sh | bash
-````
+```
+
+Install VS Code :
+
+```bash
+make vscode
+```
+
+Install Java tools :
+
+```bash
+make vscode
+```
 
 ## TODO
 

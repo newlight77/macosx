@@ -270,6 +270,26 @@ define configure_gpg
 	echo "test" | gpg --clearsign
 endef
 
+define brew_vscode
+	brew install visual-studio-code
+endef
+
+define brew_java
+	brew install temurin
+	brew install maven \
+		gradle
+	brew install intellij-idea-ce
+
+	curl -s "https://get.sdkman.io" | bash
+
+	echo 'source ${HOME}/.sdkman/bin/sdkman-init.sh' >> ~/.zprofile
+
+	# sdk install java x.y.z-adpt
+	# sdk install java x.y.z-open
+	# sdk install java x.y.z-grl
+
+endef
+
 
 help: 
 	@grep -h -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -293,4 +313,10 @@ setup: ## setup useful tools on this mac (curl, git, python, docker, iterm2...)
 	$(call configure_git) # use call
 	$(call ssh_keygen) # use call
 	$(call configure_gpg) # use call
+
+vscode:
+	$(value brew_vscode)
+
+java:
+	$(value brew_java)
 
