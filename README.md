@@ -1,119 +1,137 @@
 # Mac OS setup guide
 
-This serves as a guideline to setup tools on your mac, you may follow them step by step, or use the `make setup` as a Makefile is also present :
+This serves as a guideline to setup tools on your mac, you may follow them step by step, or use the scripts provided in this repository, as described below :
 
--  [setup macos](docs/setup_macos.md) or [macos ultimate](docs/macos_ultimate_guide.md)
--  [setup git](docs/setup_git.md)
--  [setup ssh](docs/setup_ssh.md)
--  [setup gpg](docs/setup_gpg.md)
--  [setup github](docs/setup_github.md)
--  [setup node](docs/setup_node.md)
--  [setup zsh](docs/setup_zsh.md)
--  [setup vscode](docs/setup_vscode.md) (upcoming)
+- [setup macos](docs/setup_macos.md) or [macos ultimate](docs/macos_ultimate_guide.md)
+- [setup git](docs/setup_git.md)
+- [setup ssh](docs/setup_ssh.md)
+- [setup gpg](docs/setup_gpg.md)
+- [setup github](docs/setup_github.md)
+- [setup python](docs/setup_python.md)
+- [setup node](docs/setup_node.md)
+- [setup java](docs/setup_java.md)
+- [setup docker](docs/setup_docker.md)
+- [setup vscode](docs/setup_vscode.md) (upcoming)
 
-> Note that even running `make setup`, you still have a few manual tasks as suggested below.
-
-More setup (optionally):
-
--  [with neovim setup](docs/setup_neovim.md)
--  [with mani setup](docs/setup_mani.md)
--  [with python setup](docs/setup_python.md)
-
-A bit more customization (optionally):
-
--  [customize dotfiles](docs/setup_dotfiles.md)
--  [additional tools](docs/additional_tools.md)
+> Note that `bash`, `zsh` and `oh-my-zsh` are covered by the [dotfiles repository](https://github.com/newlight77/dotfiles) to customize dotfiles (bash, zsh, fish, git, nvim).
 
 Going further :
 
-- [dotfiles](https://github.com/newlight77/dotfiles) to customize dotfiles (bash, zsh, fish, git, nvim)
 - [nvchad](https://github.com/newlight77/nvchad) as a preconfigured neovim setup
 - [neovim-preconfigured](https://github.com/newlight77/neovim-preconfigured) another preconfigured neovim setup
 - [workspace](https://github.com/newlight77/workspace) a all-in-one workspace hosting repositories, managed by mani CLI
+- [setup mani](docs/setup_mani.md)
 
-## Setup automatically
+## Install Steps
 
-```sh
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-# Intel chips
-eval "$(/usr/local/bin/brew shellenv)"
-# M chips
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-brew update
-brew install cmake
-```
-
-1. Configure git
+1. Install homebrew
 
 ```bash
-echo '
-GIT_USER_NAME=<your name>
-GIT_USER_EMAIL=<you email>
-GIT_EDITOR=nano or vi
-' > .env
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-homebrew.sh | bash
 ```
 
-2. Set a passphrase
+2. Install basic tools
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-basic-tools.sh | bash
+```
+
+3. Install and Configure SSH & PGP
 
 ```bash
 echo '
 PASSPHRASE=your passphrase for ssh key and gpg
-'
+' >> .env
 ```
 
-3. Run the setup
-
-```sh
-make setup
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-ssh-pgp.sh | bash
 ```
 
-## Necessary Manual Tasks
+4. Install git
 
-### 1. Oh-my-zsh customization
+```bash
+echo '
+GIT_USER_NAME='Your name'
+GIT_USER_EMAIL='Your email'
+GIT_EDITOR=vi
+#GIT_EDITOR=nano
+' > .env
 
-You will have to open a new tab/terminal to spawn a new zsh console in order to customize your oh-my-zsh.
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-git.sh | bash
 
-### 2. Ssh-keygen
+git config --global credential.helper osxkeychain
+```
 
-The ssh key generation is covered by `make setup`. For more detail, refer to [setup ssh](docs/setup_ssh.md).
+### All-in-one step
 
-Once the ssh key is generated, you will have to copy/paste (pbcopy to clipboard) and declare it on your github asetting.
+> You may run the all-in-one script below :
 
-### 3. GPG personal information
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-all.sh | bash
+```
 
-The gpg key generation is covered by `make setup`. For more detail, refer to [setup gpg](docs/setup_gpg.md).
+## Bash & Zsh customization
 
-Once the gpg key is generated, you will have to copy/paste (pbcopy to clipboard) and declare it on your github asetting.
-
-
-## Recommendations
-
-- Customize [dotfiles](https://github.com/newlight77/dotfiles) : bash, git, zsh
-
-All pre-requisites are already installed by `make setup`.
+The is customization is covered by the [dotfiles repository](https://github.com/newlight77/dotfiles).
 
 ```bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-bash.sh | bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-git.sh | bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-util.sh | bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-zsh.sh | bash
 ```
 
-Install VS Code :
+You will have to open a new tab/terminal to spawn a new zsh console in order to customize your oh-my-zsh.
+
+## Manual task
+
+### 1. Ssh-keygen
+
+The ssh key generation is covered by `install-ssh-pgp.sh`. For more detail, refer to [setup ssh](docs/setup_ssh.md).
+
+Once the ssh key is generated, you will have to copy/paste (pbcopy to clipboard) and declare it on your github asetting.
+
+### 2. GPG personal information
+
+The gpg key generation is covered by `install-ssh-pgp.sh`. For more detail, refer to [setup gpg](docs/setup_gpg.md).
+
+Once the gpg key is generated, you will have to copy/paste (pbcopy to clipboard) and declare it on your github asetting.
+
+## More
+
+Install Python tools :
 
 ```bash
-make vscode
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-python.sh | bash
+```
+
+Install Node tools :
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-node.sh | bash
 ```
 
 Install Java tools :
 
 ```bash
-make vscode
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-java.sh | bash
 ```
 
-## TODO
+Install Docker & Minikube :
 
-- VS Code
-- 
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-docker.sh | bash
+```
+
+Install VS Code (upcoming) :
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-vs-code.sh | bash
+```
+
+Install more tools :
+
+-  [with neovim setup](docs/setup_neovim.md)
+-  [additional tools](docs/additional_tools.md)
+
+## TODO
