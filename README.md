@@ -24,19 +24,7 @@ curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-homebre
 curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-basic-tools.sh | bash
 ```
 
-3. Install and Configure SSH & PGP
-
-```bash
-echo '
-PASSPHRASE=your passphrase for ssh key and gpg
-' >> .env
-```
-
-```bash
-curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-ssh-pgp.sh | bash
-```
-
-4. Install git
+3. Install git
 
 ```bash
 echo '
@@ -49,6 +37,18 @@ GIT_EDITOR=vi
 curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-git.sh | bash
 
 git config --global credential.helper osxkeychain
+```
+
+4. Install and Configure SSH & PGP
+
+```bash
+echo '
+PASSPHRASE=your passphrase for ssh key and gpg
+' >> .env
+```
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-ssh-pgp.sh | bash
 ```
 
 5. Development stacks and IDEs
