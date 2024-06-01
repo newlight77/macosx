@@ -63,6 +63,31 @@ curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-git.sh 
 git config --global credential.helper osxkeychain
 ```
 
+5. Development stacks and IDEs
+
+- Install Python Stack
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-python.sh | bash
+```
+
+- Install Java stack
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-java.sh | bash
+```
+
+- Install Node Stack
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-node.sh | bash
+```
+
+- Install IDEs
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-ides.sh | bash
+```
+
 ### All-in-one step
 
 > You may run the all-in-one script below :
@@ -98,36 +123,6 @@ The gpg key generation is covered by `install-ssh-pgp.sh`. For more detail, refe
 Once the gpg key is generated, you will have to copy/paste (pbcopy to clipboard) and declare it on your github asetting.
 
 ## More
-
-Install Python tools :
-
-```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-python.sh | bash
-```
-
-Install Node tools :
-
-```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-node.sh | bash
-```
-
-Install Java tools :
-
-```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-java.sh | bash
-```
-
-Install Docker & Minikube :
-
-```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-docker.sh | bash
-```
-
-Install VS Code (upcoming) :
-
-```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-vs-code.sh | bash
-```
 
 Install more tools :
 

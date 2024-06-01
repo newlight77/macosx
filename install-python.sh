@@ -24,4 +24,4 @@ brew_python() {
 ## Run
 #############################################
 
-brew_java
+brew_python

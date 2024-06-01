@@ -5,9 +5,8 @@
 #############################################
 
 ssh_keygen() {
-	# echo '........generating ssh key for ${GIT_USER_EMAIL} at ~/.ssh/id_rsa'
-	# ssh-keygen -t rsa -b 4096 -C "${GIT_USER_EMAIL}" -P "${PASSPHRASE}" -f ~/.ssh/id_rsa
 	echo '........generating ssh key for ${GIT_USER_EMAIL} at ~/.ssh/id_rsa'
+	# ssh-keygen -t rsa -b 4096 -C "${GIT_USER_EMAIL}" -P "${PASSPHRASE}" -f ~/.ssh/id_rsa
 	ssh-keygen -t ed25519 -b 4096 -C "${GIT_USER_EMAIL}" -P "${PASSPHRASE}" -f ~/.ssh/id_ed25519
 
 	eval "$$(ssh-agent -k)"
@@ -108,6 +107,9 @@ configure_gpg() {
 #############################################
 ## Run
 #############################################
+if [ -f .env ]; then
+	source .env
+fi
 
 ssh_keygen
 configure_gpg
