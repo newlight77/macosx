@@ -21,6 +21,10 @@ brew_squirrelsql() {
 	brew install --cask squirrelsql
 }
 
+brew_postman() {
+	brew install --cask postman
+}
+
 #############################################
 ## Run
 #############################################
@@ -29,3 +33,4 @@ brew_vscode
 brew_idea
 brew_sqlectron
 brew_squirrelsql
+brew_postman

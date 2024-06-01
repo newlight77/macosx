@@ -23,15 +23,14 @@ brew_basic_tools() {
 }
 
 brew_dev_tools() {
-	echo '........installing dev tools'
+	echo '........installing basic dev tools'
 
 	brew install cmake
 
 	brew install --cask \
 		iterm2 \
 		cheatsheet \
-		chrome-devtools \
-		postman
+		chrome-devtools
 }
 
 

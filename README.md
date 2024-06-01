@@ -3,12 +3,12 @@
 This repository provides scripts to setup tools on your mac, you may follow them step by step, as described below :
 
 - Install homebrew
-- Install basics tools, using homebrew
+- Install basics tools, using homebrew (`curl`, `jq`, `htop`, `ncdu`, `tmux`, `HTTPie`, `tree`, `wget`, `mani`, `cmake`, `iterm`)
 - Generate SSH key and GPG
 - Install & configure git
-- Install Development Stack (python, java, node, vs code, idea, sqlectron, squirrelsql)
+- Install Development Stack (`python`, `java`, `node`, `vs code`, `idea`, `sqlectron`, `squirrelsql`, `postman`)
 
-> Note that `bash`, `zsh` and `oh-my-zsh` are covered by the [dotfiles repository](https://github.com/newlight77/dotfiles) to customize dotfiles (bash, zsh, fish, git, nvim).
+> Note that `bash`, `zsh` and `oh-my-zsh` are covered by the [dotfiles repository](https://github.com/newlight77/dotfiles) to customize dotfiles (`bash`, `zsh`, `fish`, `git`, `nvim`).
 
 ## Install Steps
 
@@ -53,19 +53,19 @@ git config --global credential.helper osxkeychain
 
 5. Development stacks and IDEs
 
-- Install Python Stack
+- Install `python` Stack
 
 ```bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-python.sh | bash
 ```
 
-- Install Java stack
+- Install `java` stack
 
 ```bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-java.sh | bash
 ```
 
-- Install Node Stack
+- Install `node` Stack
 
 ```bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-node.sh | bash
