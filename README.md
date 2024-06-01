@@ -1,26 +1,14 @@
 # Mac OS setup guide
 
-This serves as a guideline to setup tools on your mac, you may follow them step by step, or use the scripts provided in this repository, as described below :
+This repository provides scripts to setup tools on your mac, you may follow them step by step, as described below :
 
-- [setup macos](docs/setup_macos.md) or [macos ultimate](docs/macos_ultimate_guide.md)
-- [setup git](docs/setup_git.md)
-- [setup ssh](docs/setup_ssh.md)
-- [setup gpg](docs/setup_gpg.md)
-- [setup github](docs/setup_github.md)
-- [setup python](docs/setup_python.md)
-- [setup node](docs/setup_node.md)
-- [setup java](docs/setup_java.md)
-- [setup docker](docs/setup_docker.md)
-- [setup vscode](docs/setup_vscode.md) (upcoming)
+- Install homebrew
+- Install basics tools, using homebrew
+- Generate SSH key and GPG
+- Install & configure git
+- Install Development Stack (python, java, node, vs code, idea, sqlectron, squirrelsql)
 
 > Note that `bash`, `zsh` and `oh-my-zsh` are covered by the [dotfiles repository](https://github.com/newlight77/dotfiles) to customize dotfiles (bash, zsh, fish, git, nvim).
-
-Going further :
-
-- [nvchad](https://github.com/newlight77/nvchad) as a preconfigured neovim setup
-- [neovim-preconfigured](https://github.com/newlight77/neovim-preconfigured) another preconfigured neovim setup
-- [workspace](https://github.com/newlight77/workspace) a all-in-one workspace hosting repositories, managed by mani CLI
-- [setup mani](docs/setup_mani.md)
 
 ## Install Steps
 
@@ -124,9 +112,28 @@ Once the gpg key is generated, you will have to copy/paste (pbcopy to clipboard)
 
 ## More
 
-Install more tools :
+Going further :
 
--  [with neovim setup](docs/setup_neovim.md)
--  [additional tools](docs/additional_tools.md)
+- [nvchad](https://github.com/newlight77/nvchad) as a preconfigured neovim setup
+- [neovim-preconfigured](https://github.com/newlight77/neovim-preconfigured) another preconfigured neovim setup
+- [workspace](https://github.com/newlight77/workspace) a all-in-one workspace hosting repositories, managed by mani CLI
+- [setup mani](docs/setup_mani.md)
+
+### How-To
+
+You may refer to the documentation below to walk you through all the steps covered by scripts above :
+
+- [setup macos](docs/setup_macos.md) or [macos ultimate](docs/macos_ultimate_guide.md)
+- [setup git](docs/setup_git.md)
+- [setup ssh](docs/setup_ssh.md)
+- [setup gpg](docs/setup_gpg.md)
+- [setup github](docs/setup_github.md)
+- [setup python](docs/setup_python.md)
+- [setup node](docs/setup_node.md)
+- [setup java](docs/setup_java.md)
+- [setup docker](docs/setup_docker.md)
+- [setup vscode](docs/setup_vscode.md) (upcoming)
+- [with neovim setup](docs/setup_neovim.md)
+- [additional tools](docs/additional_tools.md)
 
 ## TODO
