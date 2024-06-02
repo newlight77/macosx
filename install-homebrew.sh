@@ -10,3 +10,5 @@ echo '........ installing brew ........'
 
 echo 'eval "$($(brew --prefix)/bin/brew shellenv)"' >> ~/.zshrc
 eval "$($(brew --prefix)/bin/brew shellenv)"
+
+brew update

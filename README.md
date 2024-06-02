@@ -90,7 +90,6 @@ The is customization is covered by the [dotfiles repository](https://github.com/
 
 ```bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-bash.sh | bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-util.sh | bash
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/customize-zsh.sh | bash
 ```
 
