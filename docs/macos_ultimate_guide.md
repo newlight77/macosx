@@ -34,7 +34,7 @@ xcode-select --install
 
 2. Homebrew
 
-[Homebrew](https://brew.sh) complements MacOS, and installs the stuff you need in a simple way. It is a package manager for which makes installing lots of different software like Git, Ruby, and Node simpler. Homebrew lets you avoid possible security problems associated with using the sudo command to install software like Node. 
+[Homebrew](https://brew.sh) complements MacOS, and installs the stuff you need in a simple way. It is a package manager for which makes installing lots of different software like Git, Ruby, and Node simpler. Homebrew lets you avoid possible security problems associated with using the sudo command to install software like Node.
 
 Installing Homebrew is straightforward as long as you understand the Mac Terminal.
 
@@ -42,11 +42,11 @@ Installing Homebrew is straightforward as long as you understand the Mac Termina
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Intel chips
-echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
+echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zshrc
 eval "$(/usr/local/bin/brew shellenv)"
 
 # M chips
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
@@ -97,7 +97,7 @@ eval "$(ssh-agent -s)"
 #ssh-add -K ~/.ssh/id_rsa
 ssh-add -K ~/.ssh/id_ed25519
 # Enter passphrase for /Users/user/.ssh/id_ed25519:
-# Identity added: /Users/user/.ssh/id_ed25519 
+# Identity added: /Users/user/.ssh/id_ed25519
 
 # Copy the contents of the id_ed25519.pub file to your clipboard
 pbcopy < ~/.ssh/id_ed25519.pub
@@ -109,10 +109,10 @@ pbcopy < ~/.ssh/id_ed25519.pub
 GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories.
 
 ```sh
-brew install gpg2 gnupg pinentry-mac  
+brew install gpg2 gnupg pinentry-mac
 
 export GPG_TTY=$(tty)
-echo 'export GPG_TTY=$(tty)' >> ~/.zprofile
+echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
 
 # This tells gpg to use the gpg-agent
 mkdir  ~/.gnupg
@@ -200,7 +200,7 @@ curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utili
 curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 ```
 
-Theme : 
+Theme :
 
 ```sh
 brew install romkatv/powerlevel10k/powerlevel10k
@@ -266,7 +266,7 @@ Restart your machine.
 brew install \
     python \
     pipenv \
-    pyenv 
+    pyenv
 ```
 
 Install pip :
@@ -321,7 +321,7 @@ SDKMAN (optional) :
 ```sh
 curl -s "https://get.sdkman.io" | bash
 
-echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zprofile
+echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zshrc
 
 # sdk install java x.y.z-adpt
 # sdk install java x.y.z-open
@@ -329,7 +329,7 @@ echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ./.zprofile
 
 ```
 
-11. Paas 
+11. Paas
 
 ```sh
 brew install \
@@ -339,7 +339,7 @@ brew install \
 
 ## Install tools with UI
 
-You may refer to all available tools at [Homebrew cask formula](https://formulae.brew.sh/cask/). 
+You may refer to all available tools at [Homebrew cask formula](https://formulae.brew.sh/cask/).
 
 12. General Purpose Tools
 
@@ -376,7 +376,7 @@ brew install --cask \
 brew install --cask \
     atom \
     visual-studio-code \
-    intellij-idea-ce 
+    intellij-idea-ce
 ```
 
 16. Complementary Dev Tools
@@ -460,7 +460,7 @@ brew install ntfs-3g
 
 ```sh
 brew install --cask \
-    bartender\ 
+    bartender\
     ccleaner
 ```
 

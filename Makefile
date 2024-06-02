@@ -165,7 +165,7 @@ define configure_gpg
 	#brew install gpg2 gnupg pinentry-touchid # not working... :(
 
 	export GPG_TTY=$(tty)
-	echo 'export GPG_TTY="$$(tty)"' >> ~/.zprofile
+	echo 'export GPG_TTY="$$(tty)"' >> ~/.zshrc
 
 	# This tells gpg to use the gpg-agent
 	mkdir -p ~/.gnupg
@@ -258,9 +258,9 @@ define brew_nvm
 	brew install nvm
 	mkdir ${HOME}/.nvm
 
-	echo 'export NVM_DIR="${HOME}/.nvm"' >> ~/.zprofile
-	echo '[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm ' >> ~/.zprofile
-	echo '[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion ' >> ~/.zprofile
+	echo 'export NVM_DIR="${HOME}/.nvm"' >> ~/.zshrc
+	echo '[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm ' >> ~/.zshrc
+	echo '[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion ' >> ~/.zshrc
 
 endef
 
@@ -272,7 +272,7 @@ define brew_java
 
 	curl -s "https://get.sdkman.io" | bash
 
-	echo 'source ${HOME}/.sdkman/bin/sdkman-init.sh' >> ~/.zprofile
+	echo 'source ${HOME}/.sdkman/bin/sdkman-init.sh' >> ~/.zshrc
 
 	# sdk install java x.y.z-adpt
 	# sdk install java x.y.z-open

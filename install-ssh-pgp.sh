@@ -38,7 +38,7 @@ configure_gpg() {
 	#brew install gpg2 gnupg pinentry-touchid # not working... :(
 
 	export GPG_TTY=$(tty)
-	echo 'export GPG_TTY="$$(tty)"' >> ~/.zprofile
+	echo 'export GPG_TTY="$$(tty)"' >> ~/.zshrc
 
 	# This tells gpg to use the gpg-agent
 	mkdir -p ~/.gnupg

@@ -13,7 +13,12 @@ brew_java() {
 
 	curl -s "https://get.sdkman.io" | bash
 
-	echo 'source ${HOME}/.sdkman/bin/sdkman-init.sh' >> ~/.zprofile
+	#echo 'source $HOME/.sdkman/bin/sdkman-init.sh' >> ~/.zshrc
+	echo '
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+	' >> ~/.zshrc
 
 	# sdk install java x.y.z-adpt
 	# sdk install java x.y.z-open
