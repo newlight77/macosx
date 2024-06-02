@@ -51,7 +51,18 @@ PASSPHRASE=your passphrase for ssh key and gpg
 curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-ssh-pgp.sh | bash
 ```
 
-5. Development stacks and IDEs
+5. Install ssh-agent to keep passphrase in memory for ssh private key
+
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/util/ssh-agent.sh         -o ${HOME}/.config/util/ssh-agent.sh
+
+chmod u+x ${HOME}/.config/util/ssh-agent.sh
+
+# run ssh-agent
+${HOME}/.config/util/ssh-agent.sh
+```
+
+6. Development stacks and IDEs
 
 - Install `python` Stack
 
