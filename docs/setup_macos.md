@@ -34,20 +34,15 @@ xcode-select --install
 
 2. Homebrew
 
-[Homebrew](https://brew.sh) complements MacOS, and installs the stuff you need in a simple way. It is a package manager for which makes installing lots of different software like Git, Ruby, and Node simpler. Homebrew lets you avoid possible security problems associated with using the sudo command to install software like Node. 
+[Homebrew](https://brew.sh) complements MacOS, and installs the stuff you need in a simple way. It is a package manager for which makes installing lots of different software like Git, Ruby, and Node simpler. Homebrew lets you avoid possible security problems associated with using the sudo command to install software like Node.
 
 Installing Homebrew is straightforward as long as you understand the Mac Terminal.
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-# Intel chips
-echo 'eval "$(/usr/local/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/usr/local/bin/brew shellenv)"
-
-# M chips
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+echo 'eval "$($(brew --prefix)/bin/brew shellenv)"' >> ~/.zshrc
+eval "$($(brew --prefix)/bin/brew shellenv)"
 
 brew update
 ```
@@ -80,7 +75,7 @@ Python utility :
 brew install \
     python \
     pipenv \
-    pyenv 
+    pyenv
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 #python get-pip.py --user

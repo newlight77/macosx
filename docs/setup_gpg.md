@@ -3,10 +3,10 @@
 GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories.
 
 ```sh
-brew install gpg2 gnupg pinentry-mac  
+brew install gpg2 gnupg pinentry-mac
 
 export GPG_TTY=$(tty)
-echo 'export GPG_TTY=$(tty)' >> ~/.zprofile
+echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
 
 # This tells gpg to use the gpg-agent
 mkdir  ~/.gnupg
