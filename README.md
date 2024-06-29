@@ -54,12 +54,17 @@ curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-ssh-pgp
 5. Install ssh-agent to keep passphrase in memory for ssh private key
 
 ```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/util/ssh-agent.sh         -o ${HOME}/.config/util/ssh-agent.sh
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/util/ssh-agent.sh  -o ${HOME}/.config/util/ssh-agent.sh
 
 chmod u+x ${HOME}/.config/util/ssh-agent.sh
 
 # run ssh-agent
 ${HOME}/.config/util/ssh-agent.sh
+
+
+or just run :
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-util.sh | bash
+
 ```
 
 6. Development stacks and IDEs
@@ -67,29 +72,29 @@ ${HOME}/.config/util/ssh-agent.sh
 - Install `python` Stack
 
 ```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-python.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-python.sh | bash
 ```
 
 - Install `java` stack
 
 ```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-java.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-java.sh | bash
 ```
 
 - Install `node` Stack
 
 ```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-node.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-node.sh | bash
 ```
 
 - Install IDEs
 ```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-ides.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-ides.sh | bash
 ```
 
 - Install IDEs
 ```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-docker.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-docker.sh | bash
 ```
 
 ### All-in-one step
@@ -97,7 +102,7 @@ curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-docke
 > You may run the all-in-one script below :
 
 ```bash
-curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-all.sh | bash
+curl -L https://raw.githubusercontent.com/newlight77/macosx/main/install-all.sh | bash
 ```
 
 ## Bash & Zsh customization
