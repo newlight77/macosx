@@ -87,6 +87,11 @@ curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-node.
 curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-ides.sh | bash
 ```
 
+- Install IDEs
+```bash
+curl -L https://raw.githubusercontent.com/newlight77/dotfiles/main/install-docker.sh | bash
+```
+
 ### All-in-one step
 
 > You may run the all-in-one script below :

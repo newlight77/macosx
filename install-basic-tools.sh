@@ -16,7 +16,14 @@ brew_basic_tools() {
 		tmux \
 		HTTPie \
 		tree \
-		wget
+		wget \
+		fd \
+		ripgrep \
+		bat \
+		broot \
+		difftastic \
+		asdf \
+		ranger
 
 	brew tap alajmo/mani
 	brew install mani

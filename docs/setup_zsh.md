@@ -4,7 +4,7 @@
 ```sh
 brew install bash-completion
 
-echo '[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
+echo '[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"' >> ~/.zprofile
 ```
 
 oh-my-zsh :
@@ -88,7 +88,7 @@ sed -i -e "/plugins=(git)/plugins=(alias-finder brew common-aliases copypath cop
 echo 'ZSH_ALIAS_FINDER_AUTOMATIC=”true”' >> ~/.zprofile
 ```
 
-Theme : 
+Theme :
 
 ```sh
 brew install romkatv/powerlevel10k/powerlevel10k
