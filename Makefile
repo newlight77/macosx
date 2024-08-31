@@ -139,14 +139,17 @@ define ssh_keygen
 	eval "$$(ssh-agent -k)"
 	eval "$$(ssh-agent -s)"
 
+	# normally a manual step (as it prompts for passphrase) but managed to automate it
 	# ssh-add -K ~/.ssh/id_rsa
 	# ssh-add -K ~/.ssh/id_ed25519
+	# ssh-add --apple-use-keychain
 
 	echo '#!/bin/sh ' >> ./askpass.sh
 	echo 'echo "${PASSPHRASE}"'   >> ./askpass.sh
 
 	chmod 700 ./askpass.sh
-	SSH_ASKPASS_REQUIRE=force SSH_ASKPASS="./askpass.sh" ssh-add ~/.ssh/id_ed25519
+	# SSH_ASKPASS_REQUIRE=force SSH_ASKPASS="./askpass.sh" ssh-add ~/.ssh/id_ed25519
+	SSH_ASKPASS_REQUIRE=force SSH_ASKPASS="./askpass.sh" ssh-add --apple-use-keychain
 	rm -f ./askpass.sh
 
 	# pbcopy < ~/.ssh/id_rsa.pub
