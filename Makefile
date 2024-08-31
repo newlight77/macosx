@@ -160,9 +160,9 @@ endef
 
 define configure_gpg
 	echo '........configuring gpg for ${GIT_USER_NAME}'
-	brew install gpg2 gnupg pinentry-mac
-	#brew tap jorgelbg/tap
-	#brew install gpg2 gnupg pinentry-touchid # not working... :(
+	# brew install gpg2 gnupg pinentry-mac
+	brew tap jorgelbg/tap
+	brew install gpg2 gnupg pinentry-touchid
 
 	export GPG_TTY=$(tty)
 	echo 'export GPG_TTY="$$(tty)"' >> ~/.zshrc
@@ -193,8 +193,8 @@ define configure_gpg
 	echo 'use-agent' > ~/.gnupg/gpg.conf
 	echo 'default-cache-ttl 600' >> ~/.gnupg/gpg-agent.conf
     echo 'max-cache-ttl 7200' >> ~/.gnupg/gpg-agent.conf
-	echo 'pinentry-program ${BREW_HOME}/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
-	# echo 'pinentry-program ${BREW_HOME}/bin/pinentry-touchid' >> ~/.gnupg/gpg-agent.conf
+	# echo 'pinentry-program ${BREW_HOME}/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
+	echo 'pinentry-program ${BREW_HOME}/bin/pinentry-touchid' >> ~/.gnupg/gpg-agent.conf
 
 	# We recommend disabling the option to store the password in the macOS Keychain for the default pinentry-mac program with the following option:
 	# defaults write org.gpgtools.common DisableKeychain -bool yes
